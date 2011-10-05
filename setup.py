@@ -18,9 +18,9 @@ tests_require = ['collective.testcaselayer', 'interlude']
 if sys.version_info < (2, 6):
     install_requires.append('simplejson')
 
-setup(name='collective.flowplayer',
+setup(name='collective.jplayer',
       version=version,
-      description="A simple package using Flowplayer for video and audio content",
+      description="A simple package using jPlayer for video and audio content",
       long_description=open("README.txt").read() + "\n\n" +
                        open(os.path.join("docs", "UPGRADE.txt")).read() + "\n\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
