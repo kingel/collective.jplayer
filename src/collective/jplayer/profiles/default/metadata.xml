@@ -1,0 +1,6 @@
+<metadata>
+    <version>3.0b8</version>
+    <dependencies>
+        <dependency>profile-collective.jplayer:base</dependency>
+    </dependencies>
+</metadata>
