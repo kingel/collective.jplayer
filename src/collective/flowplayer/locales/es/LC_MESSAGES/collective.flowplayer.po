@@ -1,0 +1,103 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-05-24 07:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.flowplayer\n"
+
+#: ../browser/portlet.py:191
+msgid "Add Video Portlet"
+msgstr "Añadir portlet de video"
+
+#: ../browser/portlet.py:43
+msgid "An image file to use as a splash image"
+msgstr "Una imagen para usar como splash"
+
+#: ../browser/portlet.py:202
+msgid "Edit Video Portlet"
+msgstr "Editar portelet de video"
+
+#: ../browser/portlet.py:49
+msgid "Enter a number greater than 0 to limit the number of items displayed"
+msgstr "Introduzca un número mayor que 0 para limitar el número de elementos mostrados"
+
+#: ../interfaces.py:44
+msgid "Height"
+msgstr "Altura"
+
+#: ../browser/portlet.py:58
+msgid "If enabled, a more... link will appear in the footer of the portlet, linking to the underlying data."
+msgstr "Si habilitado, un  enlace 'más ...' aparecerá en el pie del portlet enlazando a los datos"
+
+#: ../browser/portlet.py:53
+msgid "If enabled, a random video from the selection will be played."
+msgstr "Si habilitado, se mostrará un video aleatorio de la selección"
+
+#: ../browser/portlet.py:48
+msgid "Number of videos to show"
+msgstr "Número de videos a mostrar"
+
+#: ../browser/portlet.py:30
+msgid "Portlet header"
+msgstr "Cabecera del portlet"
+
+#: ../browser/portlet.py:52
+msgid "Randomise the playlist"
+msgstr "Lista de reproducción aleatoria"
+
+#: ../browser/portlet.py:57
+msgid "Show more... link"
+msgstr "Enlace 'más ...'"
+
+#: ../browser/portlet.py:42
+msgid "Splash image"
+msgstr "Imagen de splash"
+
+#: ../browser/portlet.py:34
+msgid "Target object"
+msgstr "Contenido objetivo"
+
+#: ../browser/portlet.py:35
+msgid "This can be a file containing an FLV file, or a folder or collection containing FLV files"
+msgstr "Puede ser un contenido archivo con un FLV, o una carpeta o colección con tales archivos "
+
+#: ../browser/portlet.py:192
+msgid "This portlet display a Flash Video"
+msgstr "Este portlet muestra un video flash"
+
+#: ../browser/portlet.py:31
+msgid "Title of the rendered portlet"
+msgstr "Título del portlet renderizado"
+
+#: ../interfaces.py:43
+msgid "Width"
+msgstr "Ancho"
+
+#. Default: "More…"
+#: ../browser/portlet.pt:49
+msgid "more_url"
+msgstr "Más…"
+
+#. Default: "There are no videos in this folder. Add some video files here first."
+#: ../browser/folder.pt:65
+msgid "no_videos"
+msgstr "No hay videos en esta carpeta. Añada algunos archivos de video aquí primero."
+
+#. Default: "If your video does not start playing shortly, please ensure that you have JavaScript enabled and the latest version of Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed."
+#: ../browser/folder.pt:36
+#: ../browser/portlet.pt:16
+msgid "video_fallback"
+msgstr "Si el video no comienza rápidamente, por favor, asegúrese de que tiene javascript habilitado"
+

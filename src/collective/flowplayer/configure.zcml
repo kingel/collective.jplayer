@@ -1,0 +1,108 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="collective.flowplayer">
+
+    <include package="plone.app.jquerytools" />
+    <include package=".browser" />
+
+    <include zcml:condition="installed plone.dexterity" file="dexterity.zcml"/>
+    <include zcml:condition="installed Products.kupu" file="kupu.zcml"/>
+
+    <five:registerPackage package="." initialize=".initialize" />    
+    
+    <adapter factory=".media.VideoInfoAdapter" />
+    <adapter factory=".media.AudioInfo" />
+    
+    <subscriber
+        for="Products.ATContentTypes.interface.IFileContent
+             Products.Archetypes.interfaces.IObjectInitializedEvent"
+        handler=".events.ChangeFileView"
+        />
+    <subscriber
+        for="Products.ATContentTypes.interface.IFileContent
+             Products.Archetypes.interfaces.IObjectEditedEvent"
+        handler=".events.ChangeFileView"
+        />
+
+    <subscriber
+        for="Products.ATContentTypes.interface.IATLink
+             Products.Archetypes.interfaces.IObjectInitializedEvent"
+        handler=".events.ChangeLinkView"
+        />
+    <subscriber
+        for="Products.ATContentTypes.interface.IATLink
+             Products.Archetypes.interfaces.IObjectEditedEvent"
+        handler=".events.ChangeLinkView"
+        />
+        
+    <genericsetup:registerProfile
+        name="default"
+        title="Flowplayer"
+        directory="profiles/default"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+        
+    <genericsetup:registerProfile
+        name="base"
+        title="Flowplayer setup without types"
+        directory="profiles/base"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+        
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="Flowplayer Uninstall"
+        directory="profiles/uninstall"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        description="Uninstall profile for collective.flowplayer"
+        />
+        
+
+    <genericsetup:upgradeStep
+        title="Upgrade collective.flowplayer"
+        description="Migrates flowplayer_properties to version 3.x"
+        source="1.0b5"
+        destination="3.0b1"
+        handler=".migration.migrateTo30"
+        sortkey="1"
+        profile="collective.flowplayer:default"
+    />  
+
+    <genericsetup:upgradeStep
+        title="Upgrade collective.flowplayer"
+        description="Migrates flowplayer_properties to version 3.0b2 (replace player prop. with param/src)"
+        source="3.0b1"
+        destination="3.0b2"
+        handler=".migration.migrateTo30b2"
+        sortkey="2"
+        profile="collective.flowplayer:default"
+    />  
+
+    <genericsetup:upgradeStep
+        title="Upgrade collective.flowplayer"
+        description="Dummy upgrade step to version 3.0b4"
+        source="3.0b3"
+        destination="3.0b4"
+        handler=".migration.emptyMigrate"
+        sortkey="3"
+        profile="collective.flowplayer:default"
+    />  
+
+    <genericsetup:upgradeStep
+        title="Upgrade collective.flowplayer"
+        description="Migrates flowplayer props to 3.0b8, fix for Flash 10.1 issue"
+        source="3.0b4"
+        destination="3.0b8"
+        handler=".migration.migrateTo30b8"
+        sortkey="4"
+        profile="collective.flowplayer:default"
+    />
+
+  <i18n:registerTranslations directory="locales" />
+
+</configure>

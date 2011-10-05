@@ -1,0 +1,223 @@
+Changelog
+=========
+
+3.0rc5 - Unreleased
+-------------------
+
+* Include ``simplejson`` only on Plone 3 environment
+  [keul]
+
+* Removed buggy support for image files
+  [keul]
+
+* Fixed a bug that still looks for ``flowplayer_properties``
+  even if the product is uninstalled.
+  [keul]
+
+* Fixed tests
+  [keul]
+
+3.0rc4 - 2011-06-05
+-------------------
+
+* Fixed wrong GS import step dependenciences. Fixes
+  http://plone.org/products/collective-flowplayer/issues/12
+  [naro]
+
+* added script for rebuild all .po files
+  [keul]
+
+* added italian translation
+  [keul]
+
+3.0rc3 - 2011-05-23
+-------------------
+
+* fixed http://plone.org/products/collective-flowplayer/issues/8
+  ValueError("Can't commit with opened blobs.")
+  [naro]
+
+* Update to Flowplayer 3.2.7 and latest plugin versions.
+  [elro]
+
+* Only generate a minimal config global object. Move remaining javascript to a
+  separate file in a resource directory to simplify checking with jslint and
+  customisation.
+  [elro]
+
+* Add french translation
+  [toutpt]
+
+* Make kupu setup conditionnal.
+  Fix the kupu import step dependency.
+  [kiorky]
+
+3.0rc2 - 2010-11-15
+-------------------
+
+* Dexterity behavior and view for file content.
+  [elro]
+
+* Split base configuration out from AT specific configuration.
+  [elro]
+
+* Updated to Flowplayer 3.2.5 (plugins updated to latest version)
+  [naro]
+
+* Added iPad/iPhone javascript plugin. Plugin is avalable to custom use, but
+  not included in javascript configuration by default. 
+  [naro]
+
+* Fix metadata parsing of links caused by redesign with new parsing framework.
+  [thet]
+
+* CSS simplification.
+  [thet]
+
+* Don't set flowplayer's width per javascript for audio files. Let it be set by
+  css. Besides a simplification this change also allows easy overriding.
+  [thet]
+
+* Don't hide flowplayer controls in when loading audio files
+  [thet]
+
+* Code cleanup in events.py
+  [thet]
+
+* Metadata extraction with hachoir library instead of own flv-only
+  implementation. Code partially taken from p4a.video.
+  [thet]
+
+* Test fixes and cleanups
+  [thet]
+
+* made zope2 products from collective.flowplayer to be able to provide
+  uninstall profile.
+  [naro]
+
+* implemented first part of the uninstall profile
+  [naro]
+
+3.0rc1 - 2010-06-24
+-------------------
+
+* Updated Flowplayer to 3.2.2
+  [naro]
+
+* Fix to address Flash 10.1 issue.
+  [dunlapm]
+
+3.0b7 - 2010-03-14
+------------------
+
+* Do not fail if Kupu is not available
+  [naro]
+
+* added z3c.autoinclude plugin
+  [naro]
+
+* Fixed handling of audio player if created from Kupu.
+  [naro]
+
+3.0b6 - 2010-03-09
+------------------
+
+* Updated Flowplayer to 3.1.5
+
+* Partially fixed class="autoFlowPlayer minimal audio".
+  Class minimal in combination with audio still causes problems.
+  [naro]
+
+3.0b5 - 2009-12-11
+------------------
+
+* Removed @@ prefix from collective.flowplayer.js in javascript registry.
+  It probably confused Safari and Chrome. Thanks dahoste for pointing to
+  this issue.
+  [naro]
+
+* Flowplayer updated to 3.1.4; modules updated to the latest versions
+  [naro]
+
+* Added headerparsing to IVideo-enhanced links. This allows using the
+  scaling property `clip/scaling` for links
+  [tom_gross]
+
+3.0b4 - 2009-10-05
+------------------
+
+* Depend on plone.app.jquerytools: plone.app.jqtools was renamed and the
+  package removed, so new installations would break.
+  [optilude]
+
+* use IFileContent instead of IATFile to be able to handle ATBlob as well.
+
+* added empty upgrade step for such version changes which does not require any
+  upgrade. This is not apparently good solution.
+  [naro]
+
+3.0b3 - 2009-09-26
+------------------
+
+* URL passed to flowplayer must end with known media suffix (flv, mp3, mp4
+  etc.). URL http://portal/folder/myvideo is not valid source for
+  Flowplayer, but http://portal/folder/myvideo?e=.flv is.
+  Thanks to Milos Prudek for pointing to this issue.
+  [naro]
+
+3.0b2 - 2009-09-16
+------------------
+
+* added missing plone.app.jqtools zcml include
+  [naro]
+
+* It is possible to specify flash parameters using param/... properties.
+  'player' property were changed to 'param/src'. This may be used for setting
+  eg. param/wmode to 'opaque'.
+  [naro]
+
+
+3.0b1 - 2009-09-15
+------------------
+
+* Updated to flowplayer3 - Please read Upgrade notes and Readme
+
+* new option showPlaylist toggles horizontal playlist below the player in the
+  folder/collection view mode. Images and styles are taken from this example:
+  http://flowplayer.org/demos/plugins/javascript/playlist/horizontal.htm
+
+1.0b5 - 2009-03-18
+------------------
+
+* Have the event handlers make sure they're working with an object from a
+  site where collective.flowplayer is installed.
+  [davisagli]
+
+1.0b4 - 2009-03-06
+------------------
+
+* Move the Plone dependency into the buildout to avoid the problem
+  reported in
+  http://david.wglick.org/2009/heads-up-watch-out-for-dependencies-on-plone/
+
+1.0b3 - 2009-02-23
+------------------
+
+* Added support for links
+
+* Added test coverage
+
+1.0b2 - Released September 9th, 2008
+------------------------------------
+
+* Fixed portal_javascripts rendering traceback
+  [optilude]
+
+* Fixed image player view bug
+  [optilude]
+
+1.0b1 - Released September 6th, 2008
+------------------------------------
+
+* Initial release
+

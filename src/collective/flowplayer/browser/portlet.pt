@@ -1,0 +1,56 @@
+<dl class="portlet portletFlowPlayer"
+    i18n:domain="collective.flowplayer"
+    tal:define="target_url string:${view/target_url}/view">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a tal:attributes="href target_url" tal:omit-tag="not:view/data/show_more">
+            <span tal:content="view/data/header" />
+        </a>
+        <span class="portletTopRight"></span>
+    </dt>
+    
+    <dd class="portletItem" tal:define="videos view/videos;
+                                        audio  view/audio_only;">
+        <div class='flowPlaylistHidden' tal:condition="videos">
+            <div class="flowPlayerMessage discreet" i18n:translate="video_fallback">
+                If your video does not start playing shortly, please ensure
+                that you have JavaScript enabled and the latest version of
+                Adobe Flash Player (http://www.adobe.com/products/flashplayer/) installed.
+            </div>   
+
+            <a tal:attributes="class python:audio and 'playListFlowPlayer audio' or 'playListFlowPlayer video minimal';
+                                 href view/first_clip_url">
+                    <img tal:condition="nocall:view/splash" tal:replace="structure view/splash"/>
+            </a>
+            <div class="visualClear"><!-- --></div>
+            <div class="playlist_wrap">
+                <a class="prevPage"></a>
+                <div id="pl"> 
+                    <div class="flowPlaylist-portlet-marker">
+                        <tal:block repeat="video videos">
+                            <a tal:define="audio video/audio_only"
+                               tal:attributes="href video/url;
+                                               title video/title;
+                                               class python:audio and 'playListItem audio' or 'playListItem video'"
+                                tal:content="video/title"></a>
+                        </tal:block>
+                    </div>
+                </div>
+                <a class="nextPage"></a>
+            </div>
+
+        </div>
+    </dd>
+    
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span>
+        <a tal:condition="view/data/show_more" tal:attributes="href target_url" i18n:translate="more_url">
+         More&hellip;
+         </a>
+        </span>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>
